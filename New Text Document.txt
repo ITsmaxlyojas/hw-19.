@@ -1,0 +1,25 @@
+var monki =  createSprite(45,304,20,50);
+monki.setAnimation("monkey");
+monki.scale=0.2;
+var stone = createSprite(200,304,20,20);
+stone.setAnimation("Stone");
+stone.scale=0.2;
+var banana = createSprite(200,112,20,20);
+banana.setAnimation("Banana");
+banana.scale=0.09;
+var ground =  createSprite(45,354,10000000000000000,5);
+
+function draw() {
+  background("blue");
+ monki.collide(ground);
+   if(keyDown( "space") && monki.y >= 304){
+      monki.velocityY = -12 ;
+            
+    }
+    ground.visible=false;
+  monki.velocityY = monki.velocityY + 0.8;
+
+  
+  drawSprites();
+  
+}
